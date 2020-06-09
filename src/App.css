@@ -1,11 +1,55 @@
 .App {
   text-align: center;
+  font-family: fantasy;
 }
 
-.App-header {
+.App-header,
+.App-footer {
   background-color: #282c34;
   height: 70px;
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+section{
+  margin-left: 5%;
+  margin: 5%;
+  padding-left: 25%;
+  padding-right: 15%;
+  border-radius: 3%;
+  border-bottom: #000000 solid 3px;
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 6px 6px 12px #221313;
+  padding: 10px;
+  text-align: center;
+}
+
+h1{
+  font-size: 300%;
+  text-transform: uppercase;
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.carte{
+ border: rgba(128, 128, 128, 0.432) solid;
+ border-radius: 5%;
+ margin: 2%;
+ padding: 1%;
+ width: 300px;
+}
+
+img{
+  width: 200px;
+  border-radius: 50%;
+  transition: all 0.8s;
+}
+
+img:hover{
+  width: 250px;
 }

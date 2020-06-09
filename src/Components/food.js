@@ -7,21 +7,21 @@ class Food extends Component {
     const foodMenu = foods.length ? (
       foods.map((el) => {
         return (
-          <div key={el.id}>
-            <h2>{el.name}</h2>
+          <div className="carte" key={el.id}>
+            <h2>{el.name.toUpperCase()}</h2>
             <img src={el.photo} />
-            <p>{el.compo}</p>
+            <p>{el.compo.toUpperCase()}</p>
             <p>{el.prix} DNT</p>
           </div>
         );
       })
     ) : (
-      <p>Le menu du jour n'est pas encore pret</p>
+      <p>Le menu du jour n'est pas encore prêt</p>
     );
     return (
       <div>
         <h1>Menu du jour</h1>
-        {foodMenu}
+        <div className="top">{foodMenu}</div>
       </div>
     );
   }
@@ -33,4 +33,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Food);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    foodReducer : () => dispatch({type: "PLATS_OK"})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Food);
