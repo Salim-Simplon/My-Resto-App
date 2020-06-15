@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addUser } from "../Action/Actions";
+import { postUser } from "../Action/Actions";
 
 const SingIn = ({ addPerson }) => {
   const [userName, setUserName] = useState("");
@@ -11,7 +11,9 @@ const SingIn = ({ addPerson }) => {
       <div className="Siin">
         <h1>Connexion</h1>
         <button className="btn">Inscription</button>
-        <button className="btn">Authentification</button>
+
+        <button className="btn"> Authentification</button>
+
         <form>
           <span>Nom d'utilisateur</span>
           <input
@@ -33,7 +35,7 @@ const SingIn = ({ addPerson }) => {
           <input
             type="password"
             placeholder="Entrer le mot de passe"
-            minlength="8"
+            minLength="8"
             required
             value={userPass}
             onChange={(e) => setUserPass(e.target.value)}
@@ -41,7 +43,6 @@ const SingIn = ({ addPerson }) => {
           <button
             onClick={() =>
               addPerson({
-                id: 0,
                 name: userName,
                 mail: userMail,
                 pass: userPass,
@@ -59,7 +60,7 @@ const SingIn = ({ addPerson }) => {
 const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
-  addPerson: (user) => dispatch(addUser(user)),
+  addPerson: (user) => dispatch(postUser(user)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingIn);

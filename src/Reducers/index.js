@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
 import foodReducer from './FoodReducer';
 import userReducer from './SingReducer';
-import panierReducer from './PanierReducer'
+import calcReducer from './CalcReducer';
+import totalReducer from './TotalFood';
+
+
 
 const allReducers = combineReducers({
-  foods: foodReducer , user: userReducer , panier: panierReducer
+  foods: foodReducer , user: userReducer , quantité: calcReducer, total: totalReducer 
 });
 
 export default allReducers;

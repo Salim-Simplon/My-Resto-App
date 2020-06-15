@@ -32,7 +32,6 @@ const SignUp = ({ addPerson }) => {
           <button
             onClick={() =>
               addPerson({
-                id: 0,
                 name: userName,
                 pass: userPass,
               })
