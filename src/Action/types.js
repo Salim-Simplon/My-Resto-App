@@ -7,3 +7,4 @@ export const SUM_PANIER = "SUM_PANIER";
 export const TOT_PRIX = "TOT_PRIX";
 export const PLUS_UN = "PLUS_UN";
 export const MOINS_UN = "MOINS_UN";
+export const GET_ALL_USER ="GET_ALL_USER"

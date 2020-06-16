@@ -1,13 +1,15 @@
-import { ADD_USER } from "../Action/types";
+import { ADD_USER, GET_ALL_USER } from "../Action/types";
+import Axios from "axios";
 const initialState = {
   user: [],
 };
 
 export default function userReducer(state = initialState, action) {
   if (action.type === ADD_USER) {
-    console.log(action.payload);
-    let x = Object(state.user);
-    return { ...state, user: { ...action.payload, ...state.user} };
+    return { ...state, user: { ...action.payload, ...state.user } };
   }
+  {if(action.type===GET_ALL_USER)
+  return action.payload}
+
   return state;
 }

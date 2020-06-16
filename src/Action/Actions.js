@@ -1,4 +1,3 @@
-
 import Axios from "axios";
 import {
   ADD_USER,
@@ -9,7 +8,8 @@ import {
   SUM_PANIER,
   TOT_PRIX,
   MOINS_UN,
-  PLUS_UN
+  PLUS_UN,
+  GET_ALL_USER
 } from "./types";
 
 /* add  user */
@@ -86,9 +86,9 @@ export const deleteFoods = (payload) => ({
   payload,
 });
 
-export function deletePanierFromApi() {
+export function deletePanierFromApi(id) {
   return (dispatch) =>
-    Axios.delete(`http://localhost:3000/posts/${this.state.id}`)
+    Axios.delete("http://localhost:3000/panier/" + id)
       .then((res) => dispatch(deleteFoods(res.data)))
       .catch((err) => console.log(err));
 }
@@ -117,4 +117,17 @@ export const moinsUn = (payload) => ({
   payload,
 });
 
+// Get users
 
+export const getAlluser = (payload) => ({
+  type: GET_ALL_USER,
+  payload,
+});
+
+export  function GetUsersFromApi() {
+  return (dispatch) =>
+  Axios.get("http://localhost:3000/user").then((res) =>
+  { dispatch(getAlluser(res.data))
+     console.log(res.data)
+  })
+}

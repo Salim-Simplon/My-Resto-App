@@ -34,7 +34,7 @@ export default function foodReducer(state = initialState, action) {
     };
   }
   if (action.type === DELETE_FOODS) {
-    return state.panier.filter((panier) => panier.id !== action.payload);
+    return {...state, panier: state.panier.filter((panier) => panier.id !== action.data)}
   }
   // Nesting the reducers on PLUS_UN and MOINS_UN
   if ([PLUS_UN, MOINS_UN].includes(action.type)) {

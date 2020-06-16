@@ -18,7 +18,7 @@ function Link() {
   return (
     <div className="link">
       <a href="/connexion">Connexion</a>
-      <a href="/">Carte</a>
+      <a href="/home">Carte</a>
       <a href="/panier">Commande</a>
       <a href="/signup">Deconnexion</a>
     </div>

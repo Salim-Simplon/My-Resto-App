@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { postUser } from "../Action/Actions";
+import { Link } from "react-router-dom";
 
 const SingIn = ({ addPerson }) => {
   const [userName, setUserName] = useState("");
   const [userMail, setUserMail] = useState("");
   const [userPass, setUserPass] = useState("");
+
   return (
     <div className="Sin">
       <div className="Siin">
-        <h1>Connexion</h1>
-        <button className="btn">Inscription</button>
+        <h1>Inscription</h1>
 
-        <button className="btn"> Authentification</button>
+        <Link to="/auto">
+          <button className="btn"> Authentification</button>
+        </Link>
 
         <form>
           <span>Nom d'utilisateur</span>
@@ -40,17 +43,19 @@ const SingIn = ({ addPerson }) => {
             value={userPass}
             onChange={(e) => setUserPass(e.target.value)}
           />
-          <button
-            onClick={() =>
-              addPerson({
-                name: userName,
-                mail: userMail,
-                pass: userPass,
-              })
-            }
-          >
-            Envoyer
-          </button>
+          <Link to="/carte">
+            <button
+              onClick={() =>
+                addPerson({
+                  name: userName,
+                  mail: userMail,
+                  pass: userPass,
+                })
+              }
+            >
+              S'inscrire
+            </button>
+          </Link>
         </form>
       </div>
     </div>

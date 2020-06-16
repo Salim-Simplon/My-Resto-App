@@ -126,7 +126,7 @@ button:hover {
 }
 
 .Siin {
-  width: 400px;
+  width: 420px;
   margin: 0 auto;
   margin-top: 5%;
   margin-bottom: 5%;
@@ -152,7 +152,7 @@ button:hover {
   font-size: medium;
   color: rgb(19, 17, 17);
   padding: 14px 20px;
-  margin:4% 0;
+  margin: 4% 0;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -184,3 +184,4 @@ button:hover {
 .qte {
   cursor: pointer;
 }
+

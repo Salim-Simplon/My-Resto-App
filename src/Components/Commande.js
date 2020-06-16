@@ -18,7 +18,15 @@ class Order extends Component {
     console.log(this.props.quantité.quantité);
     console.log(this.props.panier.id);
     const { panier } = this.props;
-    const prixPanier = <span>{panier.reduce((a, el) => a + Number.parseFloat(el.prix * this.props.quantité.quantité), 0)}</span>;
+    const prixPanier = (
+      <span>
+        {panier.reduce(
+          (a, el) =>
+            a + Number.parseFloat(el.prix * this.props.quantité.quantité),
+          0
+        )}
+      </span>
+    );
     const foodPanier = panier.length ? (
       panier.map((el) => {
         return (
@@ -28,7 +36,7 @@ class Order extends Component {
               style={{ fontSize: "x-large", cursor: "pointer" }}
               role="img"
               aria-label="Opps! Supprimer!"
-              onClick={() => this.props.delete(el)}
+              onClick={() => this.props.delete(el.id)}
             >
               🗑️
             </span>
@@ -80,7 +88,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   getAllPanier: () => dispatch(getPanierFromApi()),
-  delete: () => dispatch(deleteFoods()),
+  delete: (id) => dispatch(deleteFoods(id)),
   total: () => dispatch(totalPrice()),
   sum: () => dispatch(sumPrice()),
   plus: (payload) => dispatch(plusUn(payload)),
